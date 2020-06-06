@@ -1,31 +1,46 @@
 import Head from 'next/head'
-// import "../styles/index.module.css"
+import Layout from '../components/layout'
+import Generate from '../components/generate'
 
 export default function Home() {
   return (
-    <div className="container">
+    <>
       <Head>
         <title>Prove the Work</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="../assets/fonts/Cairo-Regular.ttf" rel="stylesheet"></link>
       </Head>
+      <Layout>
+        <div className="hero">
+          <h1>Prove the Work</h1>
+          <p>Flexible engagement in the marketplace of ideas</p>
+        </div>
 
-<div className="hero">
-<h1>Prove the Work</h1>
-<p>Secure, flexible engagement in the marketplace of ideas</p>
-</div>
-   
-   <style jsx>{`
+<Generate/>
+
+        <style jsx>{`
    @font-face {
     font-family: "Cairo";
-    src: url("../assets/fonts/Cairo-Regular.ttf") format("truetype");
+    src: url("/fonts/Cairo-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Cairo-Bold";
+    src: url("/fonts/Cairo-SemiBold.ttf") format("truetype");
+  }
+
+  h1 {
+    font-family: "Cairo-SemiBold", sans-serif;
   }
   
-  h1, p {
+  p {
     font-family: "Cairo", sans-serif;
   }
    `}
 
-   </style>
-    </div>
+        </style>
+      </Layout>
+
+    </>
   )
 }
