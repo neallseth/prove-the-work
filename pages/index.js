@@ -12,29 +12,22 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="hero">
-          <h1>Prove the Work</h1>
+          <h1 className="title">Prove the Work</h1>
           <p>Flexible engagement in the marketplace of ideas</p>
         </div>
 
 <Generate/>
 
         <style jsx>{`
-   @font-face {
-    font-family: "Cairo";
-    src: url("/fonts/Cairo-Regular.ttf") format("truetype");
+
+  .hero{
+    height: 50vh;
+    padding-top:7.5vh;
   }
 
-  @font-face {
-    font-family: "Cairo-Bold";
-    src: url("/fonts/Cairo-SemiBold.ttf") format("truetype");
-  }
-
-  h1 {
-    font-family: "Cairo-SemiBold", sans-serif;
-  }
-  
-  p {
-    font-family: "Cairo", sans-serif;
+  .title{
+    font-size: 3rem;
+    margin-bottom .5rem;
   }
    `}
 
