@@ -18,7 +18,6 @@ header{
         a{
             font-family: "Cairo", sans-serif;
             padding: 0rem 1rem;
-
         }
         `}
 
