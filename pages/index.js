@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Layout from '../components/layout'
-import Generate from '../components/generate'
+import Head from "next/head";
+import Layout from "../components/layout";
+import Generate from "../components/generate";
 
 export default function Home() {
   return (
@@ -16,24 +16,23 @@ export default function Home() {
           <p>Flexible engagement in the marketplace of ideas</p>
         </div>
 
-<Generate/>
+        <Generate />
 
-        <style jsx>{`
+        <style jsx>
+          {`
 
-  .hero{
-    height: 50vh;
-    padding-top:7.5vh;
-  }
+        .hero{
+          height: 30vh;
+          padding-top:7.5vh;
+        }
 
-  .title{
-    font-size: 3rem;
-    margin-bottom .5rem;
-  }
-   `}
-
+        .title{
+          font-size: 3rem;
+          margin-bottom .5rem;
+        }
+        `}
         </style>
       </Layout>
-
     </>
-  )
+  );
 }
