@@ -1,6 +1,6 @@
 export default function MainButton(props) {
   return (
-    <button className={props.hoverColor}>
+    <button {...props}>
       {props.contents}
       <style jsx>
         {`
@@ -12,13 +12,13 @@ export default function MainButton(props) {
             border: none;
             background-color: rgba(0, 84, 255, 0.01);
             cursor: pointer;
-            transition: all 0.25s;
+            transition: all 0.15s ease-in;
             box-shadow: 3px 3px 6px #b5b5b5;
             letter-spacing: 0.1em;
             margin: 1.5rem;
             outline: none;
           }
-          .lightBlue:hover {
+          button:hover {
             background-color: rgba(0, 84, 255, 0.08);
             box-shadow: 2px 2px 4px #b5b5b5;
           }

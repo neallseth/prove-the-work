@@ -1,13 +1,32 @@
-import MainButton from "../components/MainButton";
+import { useState } from "react";
+import MainButton from "./MainButton";
+import { sha256 } from "js-sha256";
 
 export default function Generate(props) {
+  const [entry, setEntry] = useState("");
+  const [hash, setHash] = useState("");
+
   return (
     <div className="gen-section">
       <textarea
-        spellcheck="false"
-        placeholder='e.g., "I predict the Washington Capitals will win the 2024 Stanley Cup"'
+        spellCheck="false"
+        placeholder='e.g., "This message was written by John Doe in April of 2024'
+        onChange={(e) => {
+          setEntry(e.target.value);
+          setHash("");
+        }}
+        value={entry}
       ></textarea>
-      <MainButton contents="Generate Token" hoverColor="lightBlue" />
+      <MainButton
+        className=".gen-button"
+        onClick={() => {
+          setHash(sha256(entry));
+        }}
+        contents="Generate Token"
+      />
+
+      {hash ? <p className="token">{hash}</p> : null}
+
       <style jsx>{`
         .gen-section {
           display: flex;
@@ -25,19 +44,21 @@ export default function Generate(props) {
           line-height: 1.25;
           color: black;
           border: 1px solid #e8e8e8;
-          transition: border-color 0.15s ease-in-out,
-            box-shadow 0.15s ease-in-out;
+          transition: all 0.15s ease-in;
           outline: none;
           resize: none;
         }
 
+        textarea:hover {
+          background-color: rgba(150, 176, 228, 0.1);
+        }
         textarea:focus {
           box-shadow: 0 0 0 3px #d3dfef;
           background-color: rgba(150, 176, 228, 0.1);
         }
 
-        button {
-          margin: 2rem;
+        .token {
+          cursor: pointer;
         }
       `}</style>
     </div>

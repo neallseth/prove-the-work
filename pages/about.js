@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 export default function About() {
   return (
     <Layout>
-      <h1>Purpose</h1>
+      <h1>Concept</h1>
       <p>
         Normally, when engaging in the marketplace of ideas, one provides two
         key pieces of information: the idea itself, and the identity of the

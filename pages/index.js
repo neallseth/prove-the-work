@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import Generate from "../components/generate";
+import Generate from "../components/Generate";
+import Validate from "../components/Validate";
 
 export default function Home() {
   return (
@@ -17,13 +18,15 @@ export default function Home() {
         </div>
 
         <Generate />
+        <Validate />
 
         <style jsx>
           {`
 
         .hero{
-          height: 30vh;
-          padding-top:7.5vh;
+          // height: 12rem;
+          padding-top:2rem;
+          padding-bottom: 5rem;
         }
 
         .title{
