@@ -5,7 +5,7 @@ export default function MainButton(props) {
       <style jsx>
         {`
           button {
-            border-radius: 0.5rem;
+            border-radius: 0.4rem;
             height: 2rem;
             width: 100%;
             max-width: 15rem;
@@ -13,14 +13,14 @@ export default function MainButton(props) {
             background-color: rgba(0, 84, 255, 0.01);
             cursor: pointer;
             transition: all 0.15s ease-in;
-            box-shadow: 3px 3px 6px #b5b5b5;
+            box-shadow: 2px 2px 5px #b5b5b5;
             letter-spacing: 0.1em;
             margin: 1.5rem;
             outline: none;
           }
           button:hover {
-            background-color: rgba(0, 84, 255, 0.08);
-            box-shadow: 2px 2px 4px #b5b5b5;
+            background-color: rgba(150, 176, 228, 0.1);
+            box-shadow: 2px 2px 2px #b5b5b5;
           }
         `}
       </style>

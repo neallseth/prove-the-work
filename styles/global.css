@@ -1,27 +1,52 @@
 @font-face {
-    font-family: "Cairo";
-    src: url("/fonts/Cairo-SemiBold.ttf") format("truetype");
-    font-weight: 600
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-SemiBold.ttf") format("truetype");
+  font-weight: 600;
 }
-  
+
 @font-face {
-    font-family: "Cairo";
-    src: url("/fonts/Cairo-Regular.ttf") format("truetype");
+  font-family: "Cairo";
+  src: url("/fonts/Cairo-Regular.ttf") format("truetype");
 }
-  
+
 @font-face {
-    font-family: "Open Sans";
-    src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cairo", sans-serif;
 }
 
 h1 {
-    font-family: "Cairo", sans-serif;
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
 }
 
-p, button {
-    font-family: "Open Sans", sans-serif;
+p,
+button,
+div,
+span {
+  font-family: "Open Sans", sans-serif;
 }
 
-textarea{
-    font-family: "Cairo", sans-serif;
+textarea {
+  font-family: "Cairo", sans-serif;
 }

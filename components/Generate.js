@@ -7,7 +7,15 @@ export default function Generate(props) {
   const [hash, setHash] = useState("");
 
   return (
-    <div className="gen-section">
+    <div className="container">
+      <div className="top-sec">
+        <h2>Create</h2>
+        {hash ? (
+          <div className="token-container">
+            <span className="token">{hash}</span>
+          </div>
+        ) : null}
+      </div>
       <textarea
         spellCheck="false"
         placeholder='e.g., "This message was written by John Doe in April of 2024'
@@ -25,12 +33,17 @@ export default function Generate(props) {
         contents="Generate Token"
       />
 
-      {hash ? <p className="token">{hash}</p> : null}
-
       <style jsx>{`
-        .gen-section {
+        .container {
           display: flex;
           flex-direction: column;
+          align-items: center;
+        }
+
+        .top-sec {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
           align-items: center;
         }
 
@@ -57,8 +70,18 @@ export default function Generate(props) {
           background-color: rgba(150, 176, 228, 0.1);
         }
 
-        .token {
+        .token-container {
           cursor: pointer;
+          width: 60%;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          border: 1px solid #dadada;
+          background-color: whitesmoke;
+          padding: 5px;
+          border-radius: 0.25rem;
+        }
+
+        .token {
         }
       `}</style>
     </div>

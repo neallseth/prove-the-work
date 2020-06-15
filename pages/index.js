@@ -30,8 +30,11 @@ export default function Home() {
         }
 
         .title{
-          font-size: 3rem;
           margin-bottom .5rem;
+        }
+
+        h2{
+          font-size: 2rem;
         }
         `}
         </style>
