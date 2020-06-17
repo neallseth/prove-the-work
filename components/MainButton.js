@@ -20,7 +20,7 @@ export default function MainButton(props) {
           }
           button:hover {
             background-color: rgba(150, 176, 228, 0.1);
-            box-shadow: 2px 2px 2px #b5b5b5;
+            // box-shadow: 2px 2px 2px #b5b5b5;
           }
         `}
       </style>

@@ -6,12 +6,16 @@ export default function Generate(props) {
   const [entry, setEntry] = useState("");
   const [hash, setHash] = useState("");
 
+  async function handleCopyToken() {
+    await navigator.clipboard.writeText(hash);
+  }
+
   return (
     <div className="container">
       <div className="top-sec">
         <h2>Create</h2>
         {hash ? (
-          <div className="token-container">
+          <div className="token-container" onClick={handleCopyToken}>
             <span className="token">{hash}</span>
           </div>
         ) : null}
