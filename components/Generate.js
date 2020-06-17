@@ -64,6 +64,7 @@ export default function Generate(props) {
           transition: all 0.15s ease-in;
           outline: none;
           resize: none;
+          box-shadow: 2px 2px 5px #b5b5b5;
         }
 
         textarea:hover {
@@ -83,6 +84,10 @@ export default function Generate(props) {
           background-color: whitesmoke;
           padding: 5px;
           border-radius: 0.25rem;
+        }
+
+        .token-container:active {
+          background-color: #f5f5f500;
         }
 
         .token {
