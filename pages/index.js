@@ -24,7 +24,6 @@ export default function Home() {
           {`
 
         .hero{
-          // height: 12rem;
           padding-top:2rem;
           padding-bottom: 5rem;
         }

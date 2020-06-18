@@ -1,6 +1,7 @@
 import { useState } from "react";
 import MainButton from "./MainButton";
 import { sha256 } from "js-sha256";
+import MainTextArea from "../components/MainTextArea";
 
 export default function Generate(props) {
   const [entry, setEntry] = useState("");
@@ -20,17 +21,17 @@ export default function Generate(props) {
           </div>
         ) : null}
       </div>
-      <textarea
+      <MainTextArea
+        style={{ width: "90%", height: "10rem" }}
         spellCheck="false"
-        placeholder='e.g., "This message was written by John Doe in April of 2024'
+        placeholder='e.g., "This message was written by John Doe in April of 2024"'
         onChange={(e) => {
           setEntry(e.target.value);
           setHash("");
         }}
         value={entry}
-      ></textarea>
+      ></MainTextArea>
       <MainButton
-        className=".gen-button"
         onClick={() => {
           setHash(sha256(entry));
         }}
@@ -43,36 +44,11 @@ export default function Generate(props) {
           flex-direction: column;
           align-items: center;
         }
-
         .top-sec {
           display: flex;
           width: 100%;
           justify-content: space-between;
           align-items: center;
-        }
-
-        textarea {
-          width: 90%;
-          height: 10rem;
-          border-radius: 0.75rem;
-          background-color: rgba(0, 84, 255, 0.01);
-          font-size: 1rem;
-          padding: 0.75rem;
-          line-height: 1.25;
-          color: black;
-          border: 1px solid #e8e8e8;
-          transition: all 0.15s ease-in;
-          outline: none;
-          resize: none;
-          box-shadow: 2px 2px 5px #b5b5b5;
-        }
-
-        textarea:hover {
-          background-color: rgba(150, 176, 228, 0.1);
-        }
-        textarea:focus {
-          box-shadow: 0 0 0 3px #d3dfef;
-          background-color: rgba(150, 176, 228, 0.1);
         }
 
         .token-container {
@@ -88,9 +64,6 @@ export default function Generate(props) {
 
         .token-container:active {
           background-color: #f5f5f500;
-        }
-
-        .token {
         }
       `}</style>
     </div>

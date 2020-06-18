@@ -2,3 +2,6 @@ implement https://vincentgarreau.com/particles.js/
 alt: https://codepen.io/franky/pen/LGMWPK
 
 add animations (token display?)
+
+add green glow to validate text areas on success
+add green check display on success
