@@ -1,6 +1,6 @@
 export default function MainButton(props) {
   return (
-    <button {...props}>
+    <button disabled={props.isDisabled} {...props}>
       {props.contents}
       <style jsx>
         {`
@@ -11,16 +11,19 @@ export default function MainButton(props) {
             max-width: 15rem;
             border: none;
             background-color: rgba(0, 84, 255, 0.01);
-            cursor: pointer;
+            cursor: ${props.isDisabled ? "cursor" : "pointer"};
             transition: all 0.15s ease-in;
-            box-shadow: 2px 2px 5px #b5b5b5;
+            box-shadow: ${props.isDisabled
+              ? "2px 2px 5px #b5b5b5c4"
+              : "2px 2px 5px #b5b5b5"};
             letter-spacing: 0.1em;
             margin: 1.5rem;
             outline: none;
           }
           button:hover {
-            background-color: rgba(150, 176, 228, 0.1);
-            // box-shadow: 2px 2px 2px #b5b5b5;
+            background-color: ${props.isDisabled
+              ? "inherit"
+              : "rgba(150, 176, 228, 0.1)"};
           }
         `}
       </style>

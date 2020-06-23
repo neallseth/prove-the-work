@@ -13,12 +13,25 @@ export default function Validate() {
 
   const [entry, setEntry] = useState("");
   const [token, setToken] = useState("");
+  const [validation, setValidation] = useState("unchecked");
 
   function validateToken() {
     if (sha256(entry) === token) {
-      console.log("success!");
+      setValidation("pass");
     } else {
-      console.log("no match");
+      setValidation("fail");
+    }
+  }
+
+  function getValidationIcon() {
+    if (validation === "pass") {
+      return (
+        <img src="/icons/check.svg" alt="pass" style={{ height: "50px" }}></img>
+      );
+    } else if (validation === "fail") {
+      return (
+        <img src="/icons/cross.svg" alt="fail" style={{ height: "50px" }}></img>
+      );
     }
   }
 
@@ -26,6 +39,7 @@ export default function Validate() {
     <div className="container">
       <div className="top-sec">
         <h2>Validate</h2>
+        <div className="icon-sec"> {getValidationIcon()}</div>
       </div>
       <div className="main-sec">
         <MainTextArea
@@ -34,6 +48,7 @@ export default function Validate() {
           placeholder='e.g., "The Washington Capitals will win the 2024 Stanley Cup"'
           onChange={(e) => {
             setEntry(e.target.value);
+            setValidation("unchecked");
           }}
           value={entry}
         ></MainTextArea>
@@ -41,10 +56,17 @@ export default function Validate() {
           style={tokenEntryStyles}
           spellCheck="false"
           placeholder='"856e2bccf66..."'
-          onChange={(e) => setToken(e.target.value)}
+          onChange={(e) => {
+            setToken(e.target.value);
+            setValidation("unchecked");
+          }}
         ></MainTextArea>
       </div>
-      <MainButton onClick={validateToken} contents="Validate" />
+      <MainButton
+        onClick={validateToken}
+        contents="Validate"
+        isDisabled={!entry || !token}
+      />
 
       <style jsx>{`
         .container {
@@ -57,7 +79,7 @@ export default function Validate() {
         .top-sec {
           display: flex;
           width: 100%;
-          justify-content: space-between;
+          justify-content: flex-start;
           align-items: center;
         }
 
@@ -66,6 +88,10 @@ export default function Validate() {
           width: 90%;
           justify-content: space-between;
           align-items: center;
+        }
+
+        .icon-sec {
+          margin-left: 2.75rem;
         }
       `}</style>
     </div>

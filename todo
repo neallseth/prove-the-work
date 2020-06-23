@@ -1,7 +1,9 @@
 implement https://vincentgarreau.com/particles.js/
 alt: https://codepen.io/franky/pen/LGMWPK
 
-add animations (token display?)
+add animations (token display, general entrance)
+
+add favicon as logo in hero banner.  Alt idea:  chess piece
 
 add green glow to validate text areas on success
 add green check display on success
