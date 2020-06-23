@@ -6,6 +6,7 @@ add animations (token display, general entrance)
 add tooltip for copying token
 
 add favicon as logo in hero banner.  Alt idea:  chess piece
+add translucent background with box shadow behind hero text
 
 add green glow to validate text areas on success
 add green check display on success

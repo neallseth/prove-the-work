@@ -13,8 +13,17 @@ export default function Home() {
       </Head>
       <Layout>
         <div className="hero">
-          <h1 className="title">Prove the Work</h1>
-          <p>Flexible engagement in the marketplace of ideas</p>
+          <div className="title-sec">
+            <h1 className="title">Prove the Work</h1>
+            <p>Flexible engagement in the marketplace of ideas</p>
+          </div>
+          <div className="logo-sec">
+            <img
+              src="/icons/blocks.svg"
+              alt="logo"
+              style={{ height: "95px" }}
+            ></img>
+          </div>
         </div>
 
         <Generate />
@@ -24,17 +33,46 @@ export default function Home() {
           {`
 
         .hero{
-          padding-top:2rem;
-          padding-bottom: 5rem;
+          display: flex;
+          justify-content: space-between;
+          padding: 2rem;
+          background-color: #c7c7c717;
+          border-radius: 1.5rem;
+          box-shadow: 1px 1px 10px #c1c1c173;
+        }
+
+        .title-sec{
+          width:75%;
+        }
+
+        .logo-sec{
+          width:25%;
+          display:flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .title{
           margin-bottom .5rem;
+          margin-top: .5rem;
         }
 
-        h2{
-          font-size: 2rem;
+        @media (max-width: 400px){
+          .hero{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            padding: 2rem;
+            background-color: #c7c7c717;
+            border-radius: 1.5rem;
+            box-shadow: 1px 1px 10px #c1c1c173;
+          }
+
+          .title-sec, .logo-sec{
+            width:100%;
+          }
         }
+
         `}
         </style>
       </Layout>
