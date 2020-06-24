@@ -73,7 +73,7 @@ export default function Validate() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-top: 5rem;
+          margin-top: 4rem;
         }
 
         .top-sec {

@@ -17,7 +17,7 @@ export default function MainButton(props) {
               ? "2px 2px 5px #b5b5b5c4"
               : "2px 2px 5px #b5b5b5"};
             letter-spacing: 0.1em;
-            margin: 1.5rem;
+            margin-top: 1.5rem;
             outline: none;
           }
           button:hover {

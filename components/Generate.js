@@ -18,6 +18,7 @@ export default function Generate(props) {
         {hash ? (
           <button className="token-btn" onClick={handleCopyToken}>
             <span className="token">{hash}</span>
+            {/* <span class="tooltip">Tooltip text</span> */}
           </button>
         ) : null}
       </div>
@@ -44,6 +45,7 @@ export default function Generate(props) {
           display: flex;
           flex-direction: column;
           align-items: center;
+          margin-top: 4rem;
         }
         .top-sec {
           display: flex;
@@ -71,6 +73,36 @@ export default function Generate(props) {
         .token-btn:active {
           background-color: #f5f5f500;
           box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
+        }
+
+        .tooltip {
+          visibility: hidden;
+          width: 7rem;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+          position: absolute;
+          z-index: 1;
+          bottom: 150%;
+          left: 50%;
+          margin-left: -3.5rem;
+        }
+
+        .tooltip::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: black transparent transparent transparent;
+        }
+
+        .token-btn:hover .tooltip {
+          visibility: visible;
         }
       `}</style>
     </div>

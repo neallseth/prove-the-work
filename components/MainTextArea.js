@@ -7,7 +7,7 @@ export default function MainTextArea(props) {
           textarea {
             width: 100%;
             height: 100%;
-            border-radius: 0.75rem;
+            border-radius: 1rem;
             background-color: rgba(0, 84, 255, 0.01);
             font-size: 1rem;
             padding: 0.75rem;
@@ -17,7 +17,7 @@ export default function MainTextArea(props) {
             transition: all 0.15s ease-in;
             outline: none;
             resize: none;
-            box-shadow: 2px 2px 5px #b5b5b5;
+            box-shadow: 2px 2px 8px #b5b5b5ab;
           }
 
           textarea:hover {
