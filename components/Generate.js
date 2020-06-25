@@ -2,6 +2,7 @@ import { useState } from "react";
 import MainButton from "./MainButton";
 import { sha256 } from "js-sha256";
 import MainTextArea from "../components/MainTextArea";
+import CopyClipboardButton from "../components/CopyClipboardButton";
 
 export default function Generate(props) {
   const [entry, setEntry] = useState("");
@@ -16,10 +17,7 @@ export default function Generate(props) {
       <div className="top-sec">
         <h2>Create</h2>
         {hash ? (
-          <button className="token-btn" onClick={handleCopyToken}>
-            <span className="token">{hash}</span>
-            {/* <span class="tooltip">Tooltip text</span> */}
-          </button>
+          <CopyClipboardButton onClick={handleCopyToken} hash={hash} />
         ) : null}
       </div>
       <MainTextArea
@@ -54,56 +52,56 @@ export default function Generate(props) {
           align-items: center;
         }
 
-        .token-btn {
-          cursor: pointer;
-          width: 60%;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          border: 1px solid #dadada;
-          background-color: whitesmoke;
-          padding: 5px;
-          border-radius: 0.25rem;
-          box-shadow: 2px 2px 5px rgba(150, 176, 228, 0.6);
-        }
+        // .token-btn {
+        //   cursor: pointer;
+        //   width: 60%;
+        //   text-overflow: ellipsis;
+        //   overflow: hidden;
+        //   border: 1px solid #dadada;
+        //   background-color: whitesmoke;
+        //   padding: 5px;
+        //   border-radius: 0.25rem;
+        //   box-shadow: 2px 2px 5px rgba(150, 176, 228, 0.6);
+        // }
 
-        .token-btn:focus {
-          outline: none;
-        }
+        // .token-btn:focus {
+        //   outline: none;
+        // }
 
-        .token-btn:active {
-          background-color: #f5f5f500;
-          box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
-        }
+        // .token-btn:active {
+        //   background-color: #f5f5f500;
+        //   box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
+        // }
 
-        .tooltip {
-          visibility: hidden;
-          width: 7rem;
-          background-color: black;
-          color: #fff;
-          text-align: center;
-          border-radius: 6px;
-          padding: 5px 0;
-          position: absolute;
-          z-index: 1;
-          bottom: 150%;
-          left: 50%;
-          margin-left: -3.5rem;
-        }
+        // .tooltip {
+        //   visibility: hidden;
+        //   width: 7rem;
+        //   background-color: black;
+        //   color: #fff;
+        //   text-align: center;
+        //   border-radius: 6px;
+        //   padding: 5px 0;
+        //   position: absolute;
+        //   z-index: 1;
+        //   bottom: 150%;
+        //   left: 50%;
+        //   margin-left: -3.5rem;
+        // }
 
-        .tooltip::after {
-          content: "";
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          margin-left: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: black transparent transparent transparent;
-        }
+        // .tooltip::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: 100%;
+        //   left: 50%;
+        //   margin-left: -5px;
+        //   border-width: 5px;
+        //   border-style: solid;
+        //   border-color: black transparent transparent transparent;
+        // }
 
-        .token-btn:hover .tooltip {
-          visibility: visible;
-        }
+        // .token-btn:hover .tooltip {
+        //   visibility: visible;
+        // }
       `}</style>
     </div>
   );

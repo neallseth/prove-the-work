@@ -18,6 +18,7 @@ export default function MainTextArea(props) {
             outline: none;
             resize: none;
             box-shadow: 2px 2px 8px #b5b5b5ab;
+            -webkit-appearance: none;
           }
 
           textarea:hover {
