@@ -4,16 +4,31 @@ import MainButton from "./MainButton";
 import { sha256 } from "js-sha256";
 
 export default function Validate() {
-  const messageEntryStyles = { height: "10rem", width: "65%" };
+  const [entry, setEntry] = useState("");
+  const [token, setToken] = useState("");
+  const [validation, setValidation] = useState("unchecked");
+
+  const messageEntryStyles = {
+    height: "10rem",
+    width: "65%",
+    borderColor: getBorderColor(),
+  };
   const tokenEntryStyles = {
     height: "10rem",
     width: "30%",
     backgroundColor: "transparent",
+    borderColor: getBorderColor(),
   };
 
-  const [entry, setEntry] = useState("");
-  const [token, setToken] = useState("");
-  const [validation, setValidation] = useState("unchecked");
+  function getBorderColor() {
+    if (validation === "pass") {
+      return "#00ce0040";
+    } else if (validation === "fail") {
+      return "#cc00005e";
+    } else {
+      return "#e8e8e8";
+    }
+  }
 
   function validateToken() {
     if (sha256(entry) === token) {
@@ -26,11 +41,11 @@ export default function Validate() {
   function getValidationIcon() {
     if (validation === "pass") {
       return (
-        <img src="/icons/check.svg" alt="pass" style={{ height: "50px" }}></img>
+        <img src="/icons/check.svg" alt="pass" style={{ height: "45px" }}></img>
       );
     } else if (validation === "fail") {
       return (
-        <img src="/icons/cross.svg" alt="fail" style={{ height: "50px" }}></img>
+        <img src="/icons/cross.svg" alt="fail" style={{ height: "45px" }}></img>
       );
     }
   }
@@ -91,7 +106,7 @@ export default function Validate() {
         }
 
         .icon-sec {
-          margin-left: 2.75rem;
+          margin-left: 1.5rem;
         }
       `}</style>
     </div>

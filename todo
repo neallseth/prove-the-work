@@ -3,9 +3,7 @@ alt: https://codepen.io/franky/pen/LGMWPK
 
 add animations (token display, general entrance)
 
-add tooltip for copying token
-export copy to clipboard button, and tooltip to separate component
-
-
 add green glow to validate text areas on success
 add green check display on success
+
+consider switching to sha-512 - https://www.npmjs.com/package/js-sha512

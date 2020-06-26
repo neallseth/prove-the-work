@@ -1,8 +1,21 @@
-export default function CopyClipboardFunction(props) {
+import { useState } from "react";
+export default function CopyClipboardButton(props) {
+  const [tooltip, setTooltip] = useState("Copy to clipboard");
+
+  async function handleCopyToken() {
+    await navigator.clipboard.writeText(props.hash);
+    setTooltip("Copied!");
+    setTimeout(() => {
+      setTooltip("Copy to clipboard");
+    }, 1500);
+  }
+
   return (
-    <button className="token-btn" {...props}>
-      <span className="token">{props.hash}</span>
-      <span className="tooltip">Tooltip text</span>
+    <button className="token-btn" onClick={handleCopyToken}>
+      <div className="token-wrapper">
+        <span className="token">{props.hash}</span>
+      </div>
+      <span className="tooltip">{tooltip}</span>
 
       <style jsx>
         {`
@@ -10,8 +23,6 @@ export default function CopyClipboardFunction(props) {
             position: relative;
             cursor: pointer;
             width: 60%;
-            text-overflow: ellipsis;
-            overflow: hidden;
             border: 1px solid #dadada;
             background-color: whitesmoke;
             padding: 5px;
@@ -28,19 +39,26 @@ export default function CopyClipboardFunction(props) {
             box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
           }
 
+          .token-wrapper {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
           .token-btn .tooltip {
             visibility: hidden;
-            width: 120px;
-            background-color: black;
+            width: 150px;
+            background-color: #547ce12b;
             color: black;
             text-align: center;
             border-radius: 6px;
-            padding: 5px 0;
+            padding: 5px;
             position: absolute;
             z-index: 1;
-            bottom: 100%;
+            bottom: 125%;
             left: 50%;
-            margin-left: -60px;
+            margin-left: -75px;
+            opacity: 0;
+            transition: all 0.15s;
           }
 
           .tooltip::after {
@@ -51,11 +69,12 @@ export default function CopyClipboardFunction(props) {
             margin-left: -5px;
             border-width: 5px;
             border-style: solid;
-            border-color: black transparent transparent transparent;
+            border-color: #547ce12b transparent transparent transparent;
           }
 
           .token-btn:hover .tooltip {
             visibility: visible;
+            opacity: 1;
           }
         `}
       </style>
