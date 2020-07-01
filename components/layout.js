@@ -18,7 +18,7 @@ export default function Layout(props) {
             .container {
               padding: 0rem 2rem 2rem 2rem;
               margin: auto;
-              max-width: 40rem;
+              max-width: 42rem;
             }
           `}
         </style>

@@ -1,9 +1,3 @@
-implement https://vincentgarreau.com/particles.js/
-alt: https://codepen.io/franky/pen/LGMWPK
-
 add animations (token display, general entrance)
 
-add green glow to validate text areas on success
-add green check display on success
-
-consider switching to sha-512 - https://www.npmjs.com/package/js-sha512
+fix copy to clipboard on ios
