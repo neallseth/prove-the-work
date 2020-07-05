@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 export default function CopyClipboardButton(props) {
   const [tooltip, setTooltip] = useState("Copy to clipboard");
+  const copyInputRef = useRef(null);
 
-  async function handleCopyToken() {
-    await navigator.clipboard.writeText(props.hash);
+  // async function handleCopyToken() {
+  //   await navigator.clipboard.writeText(props.hash);
+  //   setTooltip("Copied!");
+  //   setTimeout(() => {
+  //     setTooltip("Copy to clipboard");
+  //   }, 1500);
+  // }
+
+  async function newCopy() {
+    copyInputRef.current.select();
+    document.execCommand("copy");
     setTooltip("Copied!");
     setTimeout(() => {
       setTooltip("Copy to clipboard");
@@ -11,14 +21,31 @@ export default function CopyClipboardButton(props) {
   }
 
   return (
-    <button className="token-btn" onClick={handleCopyToken}>
-      <div className="token-wrapper">
-        <span className="token">{props.hash}</span>
-      </div>
+    <button className="token-btn" onClick={newCopy}>
+      <input
+        type="text"
+        ref={copyInputRef}
+        className="token"
+        spellCheck={false}
+        value={props.hash}
+        contentEditable="true"
+      />
       <span className="tooltip">{tooltip}</span>
 
       <style jsx>
         {`
+          .token {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+          }
+
+          .token:focus {
+            outline: none;
+          }
           .token-btn {
             position: relative;
             cursor: pointer;
@@ -37,11 +64,6 @@ export default function CopyClipboardButton(props) {
           .token-btn:active {
             background-color: #f5f5f500;
             box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
-          }
-
-          .token-wrapper {
-            overflow: hidden;
-            text-overflow: ellipsis;
           }
 
           .token-btn .tooltip {
