@@ -1,9 +1,15 @@
 import NavBar from "../components/NavBar";
+import Head from "next/head";
 import { motion } from "framer-motion";
 
 export default function Layout(props) {
   return (
     <div className="main">
+      <Head>
+        <title>Prove the Work</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <NavBar />
       <motion.div
         className="animation-wrapper"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import MainTextArea from "../components/MainTextArea";
 import MainButton from "./MainButton";
 import { sha256 } from "js-sha256";
+import { motion } from "framer-motion";
 
 export default function Validate() {
   const [entry, setEntry] = useState("");
@@ -39,13 +40,28 @@ export default function Validate() {
   }
 
   function getValidationIcon() {
+    let icon;
     if (validation === "pass") {
       return (
-        <img src="/icons/check.svg" alt="pass" style={{ height: "45px" }}></img>
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.25 }}
+          src="/icons/check.svg"
+          alt="pass"
+          style={{ height: "35px" }}
+        ></motion.img>
       );
     } else if (validation === "fail") {
       return (
-        <img src="/icons/cross.svg" alt="fail" style={{ height: "45px" }}></img>
+        <motion.img
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          src="/icons/cross.svg"
+          alt="fail"
+          style={{ height: "35px" }}
+        ></motion.img>
       );
     }
   }
@@ -53,7 +69,7 @@ export default function Validate() {
   return (
     <div className="container">
       <div className="top-sec">
-        <h2>Validate</h2>
+        <h2>Validate Token</h2>
         <div className="icon-sec"> {getValidationIcon()}</div>
       </div>
       <div className="main-sec">
@@ -89,6 +105,7 @@ export default function Validate() {
           flex-direction: column;
           align-items: center;
           margin-top: 4rem;
+          margin-bottom: 2rem;
         }
 
         .top-sec {

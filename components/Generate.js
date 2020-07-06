@@ -11,7 +11,7 @@ export default function Generate(props) {
   return (
     <div className="container">
       <div className="top-sec">
-        <h2>Create</h2>
+        <h2>Create Token</h2>
         {hash ? <CopyClipboardButton hash={hash} /> : null}
       </div>
       <div className="main-sec">
