@@ -8,6 +8,21 @@ export default function Layout(props) {
       <Head>
         <title>Prove the Work</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Prove the Work" />
+        <meta
+          property="og:description"
+          content="Flexible engagement in the marketplace of ideas"
+        />
+        <meta
+          property="og:image"
+          content="https://provethework.com/images/blocks.jpg"
+        />
+        <meta property="og:url" content="https://provethework.com/" />
+        <meta name="twitter:card" content="Prove the Work" />
+        <meta
+          name="twitter:image"
+          content=" https://provethework.com/images/blocks.jpg"
+        />
       </Head>
 
       <NavBar />
