@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import Generate from "../components/Generate";
 import Validate from "../components/Validate";
 
