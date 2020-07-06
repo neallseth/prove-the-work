@@ -14,16 +14,17 @@ export default function Generate(props) {
         <h2>Create</h2>
         {hash ? <CopyClipboardButton hash={hash} /> : null}
       </div>
-      <MainTextArea
-        style={{ width: "90%", height: "10rem" }}
-        spellCheck="false"
-        placeholder='e.g., "This message was written by John Doe in April of 2024"'
-        onChange={(e) => {
-          setEntry(e.target.value);
-          setHash("");
-        }}
-        value={entry}
-      ></MainTextArea>
+      <div className="main-sec">
+        <MainTextArea
+          spellCheck="false"
+          placeholder='e.g., "This message was written by John Doe in April of 2024"'
+          onChange={(e) => {
+            setEntry(e.target.value);
+            setHash("");
+          }}
+          value={entry}
+        ></MainTextArea>
+      </div>
       <MainButton
         onClick={() => {
           setHash(sha256(entry));
@@ -46,56 +47,18 @@ export default function Generate(props) {
           align-items: center;
         }
 
-        // .token-btn {
-        //   cursor: pointer;
-        //   width: 60%;
-        //   text-overflow: ellipsis;
-        //   overflow: hidden;
-        //   border: 1px solid #dadada;
-        //   background-color: whitesmoke;
-        //   padding: 5px;
-        //   border-radius: 0.25rem;
-        //   box-shadow: 2px 2px 5px rgba(150, 176, 228, 0.6);
-        // }
-
-        // .token-btn:focus {
-        //   outline: none;
-        // }
-
-        // .token-btn:active {
-        //   background-color: #f5f5f500;
-        //   box-shadow: 2px 2px 2px rgba(150, 176, 228, 0.6);
-        // }
-
-        // .tooltip {
-        //   visibility: hidden;
-        //   width: 7rem;
-        //   background-color: black;
-        //   color: #fff;
-        //   text-align: center;
-        //   border-radius: 6px;
-        //   padding: 5px 0;
-        //   position: absolute;
-        //   z-index: 1;
-        //   bottom: 150%;
-        //   left: 50%;
-        //   margin-left: -3.5rem;
-        // }
-
-        // .tooltip::after {
-        //   content: "";
-        //   position: absolute;
-        //   top: 100%;
-        //   left: 50%;
-        //   margin-left: -5px;
-        //   border-width: 5px;
-        //   border-style: solid;
-        //   border-color: black transparent transparent transparent;
-        // }
-
-        // .token-btn:hover .tooltip {
-        //   visibility: visible;
-        // }
+        .main-sec {
+          height: 10rem;
+          display: flex;
+          width: 90%;
+          justify-content: space-between;
+          align-items: center;
+        }
+        @media (max-width: 415px) {
+          .main-sec {
+            width: 100%;
+          }
+        }
       `}</style>
     </div>
   );
