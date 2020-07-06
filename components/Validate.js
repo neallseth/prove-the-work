@@ -98,15 +98,20 @@ export default function Validate() {
           align-items: center;
         }
 
+        .icon-sec {
+          margin-left: 1.5rem;
+        }
+
         .main-sec {
           display: flex;
           width: 90%;
           justify-content: space-between;
           align-items: center;
         }
-
-        .icon-sec {
-          margin-left: 1.5rem;
+        @media (max-width: 415px) {
+          .main-sec {
+            width: 100%;
+          }
         }
       `}</style>
     </div>
