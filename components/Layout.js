@@ -1,5 +1,4 @@
 import NavBar from "../components/NavBar";
-import ParticlesComponent from "../components/ParticlesComponent";
 
 export default function Layout(props) {
   return (
