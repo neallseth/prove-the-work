@@ -61,7 +61,7 @@ export default function About() {
         <motion.p variants={childVariants}>
           In the context of blockchain, proof of work is the consensus mechanism
           used to validate transactions and add new blocks to the chain. It
-          works by using a hash to validate the successful completion of work.
+          works by using a hash to verify the successful completion of work.
         </motion.p>
         <motion.p variants={childVariants}>
           In this context, the "work" done is the creation of a new idea.
