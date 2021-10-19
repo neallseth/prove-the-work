@@ -13,6 +13,8 @@ export default function Layout(props) {
           property="og:description"
           content="Flexible engagement in the marketplace of ideas"
         />
+            <meta name="twitter:card" content="summary" />
+
         <meta
           property="og:image"
           content="https://provethework.com/images/blocks.jpg"
